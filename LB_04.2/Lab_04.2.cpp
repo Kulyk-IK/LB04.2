@@ -2,7 +2,7 @@
 #include <iomanip>
 
 int main() {
-	double x, x_start, x_end, dx;
+	double x_start, x_end, dx;
 	
 	std::cout << "x_start = "; std::cin >> x_start;
 
@@ -30,8 +30,7 @@ int main() {
 		<< std::setw(7) << "|" << std::endl;
 	std::cout << "--------------------------" << std::endl;
 
-	x = x_start;
-	while (x <= x_end) {
+	for (double x = x_start; x < x_end; x += dx) {
 		double left_part = 2 * abs(x - 5);
 		double right_part = 0.0;
 
@@ -51,7 +50,6 @@ int main() {
 			<< std::setw(4) << "| "
 			<< std::setw(4) << y
 			<< std::setw(4) << "|" << std::endl;
-		x += dx;
 	}
 
 	std::cout << "--------------------------" << std::endl;
